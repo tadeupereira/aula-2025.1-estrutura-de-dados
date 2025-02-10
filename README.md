@@ -21,20 +21,24 @@ Os entregáveis e as datas serão definidas após encontro com os discentes dest
 ## 4. Notas da disciplina
 As notas da disciplina estão vinculadas diretamente as entregas e apresentações do projeto.
 
-Não haverá, sobre hipótese alguma, provas de AVP1 e/ou AVP2, restringindo tais notas a entrega e apresentação do projeto solicitado pelo professor, pois a disciplina visa tanto o aprendizado do conteúdo presente na ementa quando numa simulação de trabalho em equipe, indispensável para os futuros profissionais.
-
 Cada discente deve obrigatoriamente responder perguntas feitas pelo professor sobre o projeto e a implementação de tal projeto, logo o discente não pode ficar responsável por responder apenas “sua parte” no projeto.
 
-O discente que não responder as perguntas as feitas pelo professor sobre o projeto e a implementação de tal projeto ficará com nota 0 (zero).
+O discente que não responder as perguntas feitas pelo professor sobre o projeto e a implementação de tal projeto ficará com nota 0 (zero).
 
-Os discentes da equipe que deixar de fazer uma ou mais das entregas até a data combinada receberá nota 0 (zero) em tal entrega sem direito a contestação junto ao professor e/ou coordenação.
+Os discentes da equipe que deixar de fazer uma ou mais das entregas até a data limite combinada receberá nota 0 (zero) em tal entrega sem direito a contestação junto ao professor e/ou coordenação.
 
-Caso o discente não esteja presente na data da apresentação marcada, o mesmo deverá apresentar e responder as perguntas do professor sobre o projeto no dia e hora marcada no calendário acadêmico para prova de AVP1 (no caso da primeira entrega) e AVP2 (no caso da segunda entrega), abrindo obrigatoriamente mão, e de forma irrestrita, do seu direito de fazer uma futura segunda chamada em quaisquer uma das provas supramencionadas.
+#### 4.1. Sobre prova escrita de AVP1 e AVP2
+Não haverá, sobre hipótese alguma, provas escrita de AVP1 e/ou AVP2, restringindo tais notas a entrega e apresentação do projeto solicitado pelo professor, pois a disciplina visa tanto o aprendizado do conteúdo presente na ementa quando numa simulação de trabalho em equipe, indispensável para os futuros profissionais.
 
-A nota de AVP1 e AVP2 que será lançado para o discente será feita de acordo com o cálculo abaixo:
+#### 4.2. Segunda chamada da AVP1 e AVP2
+Caso o discente não esteja presente na data da apresentação marcada, o mesmo deverá apresentar e responder as perguntas do professor sobre o projeto no dia e hora marcado no calendário acadêmico para prova de AVP1 (no caso da primeira entrega) e AVP2 (no caso da segunda entrega). Não haverá, sobre hipótese alguma, provas escritade de segunda chamada de AVP1 e/ou AVP2.
+
+### 4.3. Cálculo da nota da AVP1 e AVP2
+As notas de AVP1 e AVP2 que serão lançadas para cada um dos discentes usará o cálculo abaixo:
 
 NL = ( NE + ND + ME*2 ) / 4
 
+NL = Nota que será lançada para cada um dos discentes
 NE = Nota geral da apresentação da equipe
 ND = Nota individual da apresentação do discente
 ME = Média do somatório da nota individual da apresentação de cada um dos discente da equipe
