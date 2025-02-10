@@ -33,7 +33,7 @@ Não haverá, sobre hipótese alguma, provas escrita de AVP1 e/ou AVP2, restring
 #### 4.2. Segunda chamada da AVP1 e AVP2
 Caso o discente não esteja presente na data da apresentação marcada, o mesmo deverá apresentar e responder as perguntas do professor sobre o projeto no dia e hora marcado no calendário acadêmico para prova de AVP1 (no caso da primeira entrega) e AVP2 (no caso da segunda entrega). Não haverá, sobre hipótese alguma, provas escritade de segunda chamada de AVP1 e/ou AVP2.
 
-### 4.3. Cálculo da nota da AVP1 e AVP2
+#### 4.3. Cálculo da nota da AVP1 e AVP2
 As notas de AVP1 e AVP2 que serão lançadas para cada um dos discentes usará o cálculo abaixo:
 
 NL = ( NE + ND + ME*2 ) / 4
