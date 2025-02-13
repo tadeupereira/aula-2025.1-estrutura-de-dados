@@ -14,9 +14,9 @@ O discente que for expulso de uma equipe deverá fazer um outro projeto que ser�
 ## 3.  Entregas do projeto
 Serão marcadas duas datas para as entregas do projeto, sendo uma data para entrega parcial (referente a AVP1) e outra data para entrega final (referente a AVP2).
 
-Os códigos fontes devem ser enviados para o repositório defino para a equipe antes da apresentação.
+Os códigos-fonte devem ser enviados para o repositório defino para a equipe antes da apresentação.
 
-Os entregáveis e as datas serão definidas após encontro com os discentes destinado a criação de equipes e distribuição do projeto.
+Os entregáveis serão definidas após encontro com os discentes destinado a criação de equipes e distribuição do projeto.
 
 ## 4. Notas da disciplina
 As notas da disciplina estão vinculadas diretamente as entregas e apresentações do projeto.
@@ -38,13 +38,21 @@ As notas de AVP1 e AVP2 que serão lançadas para cada um dos discentes usará o
 
 NL = ( NE + ND + ME*2 ) / 4
 
-NL = Nota que será lançada para cada um dos discentes
-NE = Nota geral da apresentação da equipe
-ND = Nota individual da apresentação do discente
-ME = Média do somatório da nota individual da apresentação de cada um dos discente da equipe
+NL: Nota que será lançada para cada um dos discentes na AVP1 e AVP2
 
-## 5. Projetos e equipes
+NE: Nota geral da apresentação da equipe
+
+ND: Nota individual da apresentação do discente
+
+ME: Média do somatório da nota individual da apresentação de cada um dos discente da equipe
+
+## 5. Datas das entregas e apresentações
+Cada turma deverá verificar no _PLANO DE ENSINO E APRENDIZAGEM_ as datas das apresentações.
+
+A data limite para a entrega dos códigos-fonte será no dia anterior a data de cada apresentação, não podendo ser levado em consideração as apresentações de segunda chamada. A não entraga do códigos-fonte na data resultará em prejuizo para a equipe sobre a nota final.
+
+## 6. Projetos e equipes
 Este item será atualizado após encontro com os discentes destinado a criação de equipes e distribuição do projeto.
 
-## 6. Dúvidas
-Caso o discente tenha qualquer dúvida sobre este, o mesmo deve se encaminhar ao professor para que o mesmo dirimir tal dúvida.
+## 7. Dúvidas
+Em caso de qualquer dúvida sobre este, o discente deve se encaminhar ao professor para que o mesmo e somente o mesmo possa dirimir tal dúvida.
