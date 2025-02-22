@@ -55,7 +55,121 @@ Cada turma deverá verificar no _PLANO DE ENSINO E APRENDIZAGEM_ as datas das ap
 A data limite para a entrega dos códigos-fonte será no dia anterior a data de cada apresentação, não podendo ser levado em consideração as apresentações de segunda chamada. A não entraga do códigos-fonte na data resultará em prejuizo para a equipe sobre a nota final.
 
 ## 6. Projetos e equipes
-Este item será atualizado após encontro com os discentes destinado a criação de equipes e distribuição do projeto.
+### 6.1. Gerenciador de Tarefas
+#### 6.1.1. Objetivo
+Criar um sistema de gerenciamento de tarefas usando listas ligadas.
+
+#### 6.1.2. Descrição
+Desenvolver um sistema para gerenciar tarefas utilizando listas ligadas. O usuário poderá adicionar, remover e visualizar tarefas. Cada tarefa terá um título, uma descrição e uma prioridade (alta, média, baixa).
+
+#### 6.1.3. MVP 1 (Entrega 1)
+✅ Implementar estrutura de dados lista ligada estática.
+
+✅ Implementar funções para:
+
+    • Adicionar uma nova tarefa na lista.
+    • Remover uma tarefa na lista.
+    • Listar todas as tarefas na lista.
+    
+#### 6.1.4. MVP 2 (Entrega 2)
+
+✅ Implementar estrutura de dados lista ligada dinâmica.
+
+✅ Implementar funções para:
+
+    • Remover uma tarefa da lista.
+    • Ordenar as tarefas por prioridade.
+    • Fazer busca linear de uma tarefa pelo título.
+    • Fazer busca binária de uma tarefa pelo título.
+
+---
+
+### 6.2. Gerenciador de atendimento
+#### 6.2.1. Objetivo
+Criar um sistema de gerenciamento de atendimento usando filas.
+
+#### 6.2.2. Descrição
+Desenvolver um sistema para gerenciar atendimentos utilizando filas. O usuário poderá adicionar, remover e visualizar os atendimentos. Cada atendimento deverá ter o nome e CPF da pessoa, além da prioridade do atendimento (alta, média, baixa).
+
+#### 6.2.3. MVP 1 (Entrega 1)
+✅ Implementação da estrutura de dados fila estática.
+
+✅ Implementar funções para:
+
+    • Adicionar um cliente na fila.
+    • Remover um cliente na fila.
+    • Listar todos os clientes da fila.
+
+#### 6.2.4. MVP 2 (Entrega 2)
+✅ Implementar estrutura de dados fila dinâmica.
+
+✅ Implementar funções para:
+
+    • Remover um cliente da fila.
+    • Ordenar os clientes por prioridade.
+    • Fazer busca linear de um cliente pelo nome.
+    • Fazer busca binária de um cliente pelo nome.
+
+---
+
+### 6.3. Gerenciador de Estoque
+#### 6.3.1. Objetivo
+Criar um sistema de gerenciamento de estoque utilizando usando filas.
+
+#### 6.3.2. Descrição
+Desenvolver um sistema para gerenciar o estoque de produto utilizando filas. O usuário poderá adicionar, remover e visualizar produtos. Cada produto terá um código alfanumérico, a descrição do produto e a quantidade em estoque.
+
+#### 6.3.3. MVP 1 (Entrega 1)
+✅ Implementar estrutura de dados fila estática.
+
+✅ Implementar funções para:
+
+    • Adicionar um produto no estoque.
+    • Remover  um produto no estoque.
+    • Listar todos os  produtos do estoque.
+
+#### 6.3.4. MVP 2 (Entrega 2)
+✅ Implementar estrutura de dados fila estática.
+
+✅ Implementar funções para:
+
+    • Remover um produto no estoque.
+    • Ordenar o produto por descrição.
+    • Fazer busca linear de um produto por descrição.
+    • Fazer busca binária de um produto por descrição.
+
+---
+
+### 6.4. Gerenciador de Chamadas Telefônicas
+#### 6.4.1. Objetivo
+Criar um sistema de gerenciamento de ligações telefônicas utilizando pilhas.
+
+#### 6.4.2. Descrição
+Desenvolver um sistema para armazenar e gerenciar as chamadas telefônicas feitas e recebidas. O usuário poderá adicionar chamadas à pilha, retornar à última chamada e visualizar todo o histórico. Cada registro de chamada terá o número discado, o dia da chamada e o horário da chamada.
+
+#### 6.4.3. MVP 1 (Entrega 1)
+✅ Implementar estrutura de dados pilha estática.
+
+✅ Implementar funções para:
+
+    • Adicionar uma chamada.
+    • Remover a última chamada registrada.
+    • Listar todas as chamadas armazenadas.
+
+#### 6.4.4. MVP 2 (Entrega 2)
+✅ Implementar estrutura de dados pilha dinâmica.
+
+✅ Implementar funções para:
+
+    • Remover chamadas do histórico.
+    • Ordenar chamadas pelos números.
+    • Fazer busca linear de uma chamada pelo número.
+    • Fazer busca binária de uma chamada pelo número.
+
+---
+
+A distribuição dos discentes nas equipes e a seleção do projeto a ser desenvolvido por cada equipe serão realizadas por sorteio durante o horário de aula.
+
 
 ## 7. Dúvidas
 Em caso de qualquer dúvida sobre este, o discente deve se encaminhar ao professor para que o mesmo e somente o mesmo possa dirimir tal dúvida.
