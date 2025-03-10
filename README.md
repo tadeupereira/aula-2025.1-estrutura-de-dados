@@ -62,17 +62,16 @@ Criar um sistema de gerenciamento de tarefas usando listas ligadas.
 #### 6.1.2. Descrição
 Desenvolver um sistema para gerenciar tarefas utilizando listas ligadas. O usuário poderá adicionar, remover e visualizar tarefas. Cada tarefa terá um título, uma descrição e uma prioridade (alta, média, baixa).
 
-#### 6.1.3. MVP 1 (Entrega 1)
+#### 6.1.3. Entrega 1 - MVP (Minimum Viable Product)
 ✅ Implementar estrutura de dados lista ligada estática.
 
 ✅ Implementar funções para:
 
     • Adicionar uma nova tarefa na lista.
-    • Remover uma tarefa na lista.
-    • Listar todas as tarefas na lista.
+    • Remover uma tarefa da lista.
+    • Listar todas as tarefas da lista.
     
-#### 6.1.4. MVP 2 (Entrega 2)
-
+#### 6.1.4. Entrega 2 - MVP (Minimum Viable Product)
 ✅ Implementar estrutura de dados lista ligada dinâmica.
 
 ✅ Implementar funções para:
@@ -91,7 +90,7 @@ Criar um sistema de gerenciamento de atendimento usando filas.
 #### 6.2.2. Descrição
 Desenvolver um sistema para gerenciar atendimentos utilizando filas. O usuário poderá adicionar, remover e visualizar os atendimentos. Cada atendimento deverá ter o nome e CPF da pessoa, além da prioridade do atendimento (alta, média, baixa).
 
-#### 6.2.3. MVP 1 (Entrega 1)
+#### 6.2.3. Entrega 1 - MVP (Minimum Viable Product)
 ✅ Implementação da estrutura de dados fila estática.
 
 ✅ Implementar funções para:
@@ -100,7 +99,7 @@ Desenvolver um sistema para gerenciar atendimentos utilizando filas. O usuário 
     • Remover um cliente na fila.
     • Listar todos os clientes da fila.
 
-#### 6.2.4. MVP 2 (Entrega 2)
+#### 6.2.4. Entrega 2 - MVP (Minimum Viable Product)
 ✅ Implementar estrutura de dados fila dinâmica.
 
 ✅ Implementar funções para:
@@ -114,26 +113,26 @@ Desenvolver um sistema para gerenciar atendimentos utilizando filas. O usuário 
 
 ### 6.3. Gerenciador de Estoque
 #### 6.3.1. Objetivo
-Criar um sistema de gerenciamento de estoque utilizando usando filas.
+Criar um sistema de gerenciamento de estoque utilizando usando listas ligadas.
 
 #### 6.3.2. Descrição
-Desenvolver um sistema para gerenciar o estoque de produto utilizando filas. O usuário poderá adicionar, remover e visualizar produtos. Cada produto terá um código alfanumérico, a descrição do produto e a quantidade em estoque.
+Desenvolver um sistema para gerenciar o estoque de produto utilizando listas ligadas. O usuário poderá adicionar, remover e visualizar produtos. Cada produto terá um código alfanumérico, a descrição do produto e a quantidade em estoque.
 
-#### 6.3.3. MVP 1 (Entrega 1)
-✅ Implementar estrutura de dados fila estática.
-
-✅ Implementar funções para:
-
-    • Adicionar um produto no estoque.
-    • Remover  um produto no estoque.
-    • Listar todos os  produtos do estoque.
-
-#### 6.3.4. MVP 2 (Entrega 2)
-✅ Implementar estrutura de dados fila estática.
+#### 6.3.3. Entrega 1 - MVP (Minimum Viable Product)
+✅ Implementar estrutura de dados lista ligada estática.
 
 ✅ Implementar funções para:
 
-    • Remover um produto no estoque.
+    • Adicionar um produto na lista.
+    • Remover um produto da lista.
+    • Listar todos os produtos da lista.
+
+#### 6.3.4. Entrega 2 - MVP (Minimum Viable Product)
+✅ Implementar estrutura de dados lista ligada dinâmica.
+
+✅ Implementar funções para:
+
+    • Remover um produto da lista.
     • Ordenar o produto por descrição.
     • Fazer busca linear de um produto por descrição.
     • Fazer busca binária de um produto por descrição.
@@ -142,26 +141,26 @@ Desenvolver um sistema para gerenciar o estoque de produto utilizando filas. O u
 
 ### 6.4. Gerenciador de Chamadas Telefônicas
 #### 6.4.1. Objetivo
-Criar um sistema de gerenciamento de ligações telefônicas utilizando pilhas.
+Criar um sistema de gerenciamento de ligações telefônicas utilizando filas.
 
 #### 6.4.2. Descrição
-Desenvolver um sistema para armazenar e gerenciar as chamadas telefônicas feitas e recebidas. O usuário poderá adicionar chamadas à pilha, retornar à última chamada e visualizar todo o histórico. Cada registro de chamada terá o número discado, o dia da chamada e o horário da chamada.
+Desenvolver um sistema para armazenar e gerenciar as chamadas telefônicas feitas e recebidas utilizando filas. O usuário poderá adicionar, remover e visualizar chamadas telefônicas. Cada registro de chamada terá o número discado, o dia da chamada e o horário da chamada.
 
-#### 6.4.3. MVP 1 (Entrega 1)
-✅ Implementar estrutura de dados pilha estática.
-
-✅ Implementar funções para:
-
-    • Adicionar uma chamada.
-    • Remover a última chamada registrada.
-    • Listar todas as chamadas armazenadas.
-
-#### 6.4.4. MVP 2 (Entrega 2)
-✅ Implementar estrutura de dados pilha dinâmica.
+#### 6.4.3. Entrega 1 - MVP (Minimum Viable Product)
+✅ Implementação da estrutura de dados fila estática.
 
 ✅ Implementar funções para:
 
-    • Remover chamadas do histórico.
+    • Adicionar uma chamada na fila.
+    • Remover uma chamada da fila.
+    • Listar todas as chamadas armazenadas da fila.
+
+#### 6.4.4. Entrega 2 - MVP (Minimum Viable Product)
+✅ Implementar estrutura de dados fila dinâmica.
+
+✅ Implementar funções para:
+
+    • Remover chamadas do histórico da fila.
     • Ordenar chamadas pelos números.
     • Fazer busca linear de uma chamada pelo número.
     • Fazer busca binária de uma chamada pelo número.
