@@ -52,7 +52,7 @@ ME: Média do somatório da nota individual da apresentação de cada um dos dis
 ## 5. Datas das entregas e apresentações
 Cada turma deverá verificar no _PLANO DE ENSINO E APRENDIZAGEM_ as datas das apresentações.
 
-A data limite para a entrega dos códigos-fonte será no dia anterior a data de cada apresentação, não podendo ser levado em consideração as apresentações de segunda chamada. A não entraga do códigos-fonte na data resultará em prejuizo para a equipe sobre a nota final.
+A data limite para a entrega dos códigos-fonte será na última sexta-feira antes data de cada apresentação, não podendo ser levado em consideração as apresentações de segunda chamada. A não entraga do códigos-fonte na data resultará em prejuizo para a equipe sobre a nota final.
 
 ## 6. Projetos e equipes
 ### 6.1. Gerenciador de Tarefas
