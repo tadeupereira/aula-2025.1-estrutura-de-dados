@@ -19,7 +19,7 @@ Os códigos-fonte devem ser enviados para o repositório defino para a equipe an
 Os entregáveis serão definidas após encontro com os discentes destinado a criação de equipes e distribuição do projeto.
 
 #### 3.1. Sobre comentários nos códigos-fonte
-Fica permanentemente proibido a utilização de comentários nos códigos-fontes presentes neste repositório, pois os mesmos serão utilizados pelo professor para fazer perguntas aos docentes envolvidos no projeto durante a apresentação. A equipe com comentários presentes nos códigos-fonte será gravemente penalizada na nota como um todo.
+Um código-fonte com bons comentários é altamente recomendado e essencial para a manutenção do mesmo, mas __"para este trabalho fica permanentemente proibido a utilização de comentários nos códigos-fontes presentes neste repositório"__, pois os mesmos serão utilizados pelo professor para fazer perguntas aos docentes envolvidos no projeto durante a apresentação. A equipe com comentários presentes nos códigos-fonte será gravemente penalizada na nota como um todo.
 
 ## 4. Notas da disciplina
 As notas da disciplina estão vinculadas diretamente as entregas e apresentações do projeto.
