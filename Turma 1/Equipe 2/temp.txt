@@ -1,6 +1,0 @@
-index
-index.c
-README.md
-temp.txt
-
-Alterando arquivo.
