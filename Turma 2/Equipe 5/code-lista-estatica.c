@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-const int MAX_TAREFAS = 10;
-const int NULL_INDEX = -1;
+
+#define MAX_TAREFAS 10
+#define NULL_INDEX -1
 
 typedef struct {
     int id;
@@ -133,7 +134,7 @@ int main() {
     char titulo[50], descricao[100];
 
     do {
-        printf("\nGerenciador de Tarefas - Equipe 05\n\n");
+        printf("\nGerenciador de Tarefas - Equipe 05");
         printf("\n1 - Adicionar\n2 - Remover\n3 - Listar\n4 - Buscar\n0 - Sair\n");
         printf("Escolha uma opção: ");
 
