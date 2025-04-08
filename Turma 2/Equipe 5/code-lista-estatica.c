@@ -24,7 +24,6 @@ void inicializarLista() {
     }
 }
 
-// Encontra o próximo espaço livre
 int alocarTarefa() {
     for (int i = 0; i < MAX_TAREFAS; i++) {
         if (!tarefas[i].usado) {
@@ -130,15 +129,23 @@ void buscarTarefa(int id) {
 
 int main() {
     inicializarLista();
-    int opcao, prioridade, id;
+    int escolha, prioridade, id;
     char titulo[50], descricao[100];
 
     do {
-        printf("\n1 - Adicionar\n2 - Remover\n3 - Listar\n4 - Buscar\n0 - Sair\nOpção: ");
-        scanf("%d", &opcao);
-        getchar(); // limpar buffer
+        printf("\nGerenciador de Tarefas - Equipe 05\n\n");
+        printf("\n1 - Adicionar\n2 - Remover\n3 - Listar\n4 - Buscar\n0 - Sair\n");
+        printf("Escolha uma opção: ");
 
-        switch (opcao) {
+        if (scanf("%d", &escolha) != 1) { 
+            printf("Entrada inválida! Digite um número.\n");
+            while (getchar() != '\n'); 
+            escolha = -1; 
+            continue; 
+        }
+        while (getchar() != '\n');
+
+        switch (escolha) {
             case 1:
                 printf("Título: ");
                 fgets(titulo, sizeof(titulo), stdin);
@@ -180,7 +187,7 @@ int main() {
             default:
                 printf("Opção inválida.\n");
         }
-    } while (opcao != 0);
+    } while (escolha != 0);
 
     return 0;
 }
