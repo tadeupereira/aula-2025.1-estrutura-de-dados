@@ -32,3 +32,20 @@ int main() {
     } while(opcao != 0);
     return 0;
 }
+void listarTarefas() {
+    if (inicio == -1) {
+        printf("\nNenhuma tarefa cadastrada.\n");
+        return;
+    }
+
+    printf("\n Lista de Tarefas \n");
+
+    int atual = inicio;
+    while (atual != -1) {
+        printf("Título: %s\n", tarefas[atual].titulo);
+        printf("Descrição: %s\n", tarefas[atual].descricao);
+        printf("Prioridade: %s\n", tarefas[atual].prioridade);
+        printf("\n");
+        atual = proximo[atual];
+    }
+}
