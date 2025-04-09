@@ -3,3 +3,5 @@ drwxrwxr-x 2 tadeu tadeu 4096 Apr  9 19:03 .
 drwxrwxr-x 6 tadeu tadeu 4096 Apr  9 18:59 ..
 -rw-rw-r-- 1 tadeu tadeu 1089 Apr  9 18:59 README.md
 -rw-rw-r-- 1 tadeu tadeu    0 Apr  9 19:03 temp.txt
+
+NOVO VALOR
