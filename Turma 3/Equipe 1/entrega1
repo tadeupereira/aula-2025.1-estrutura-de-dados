@@ -1,24 +1,19 @@
 #include <stdio.h>
-
 void adicionarTarefa();
 void removerTarefa();
 void listarTarefas();
 void inicializarLista();
-
 int main() {
     int opcao;
-
     inicializarLista();
-
     do {
-        printf("\nMENU DE TAREFAS\n");
+        printf("\nMenu de Tarefas\n");
         printf("1. Adicionar Tarefa\n");
         printf("2. Remover Tarefa\n");
         printf("3. Listar Tarefas\n");
         printf("0. Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
-
         if (opcao == 1) {
             adicionarTarefa();
         }
@@ -34,8 +29,6 @@ int main() {
         else {
             printf("Opção inválida. Tente novamente.\n");
         }
-
     } while(opcao != 0);
-
     return 0;
 }
