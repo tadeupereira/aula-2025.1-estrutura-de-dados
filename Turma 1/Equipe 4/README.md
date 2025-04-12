@@ -1,5 +1,18 @@
 # 6. Projeto e equipe
 ## 6.4. Gerenciador de Chamadas Telefônicas
+## Equipe:
+Sérgio Lucas Sousa Monteiro
+
+Rafael Bernardo Cunha Oliveira
+
+Dhiego Ismael Pereira da Silva
+
+Arthur Brito Moreira de Menezes
+
+Gabriel Vaz dos Santos
+
+Ruan Pablo Oliveira Correia
+##
 ### 6.4.1. Objetivo
 Criar um sistema de gerenciamento de ligações telefônicas utilizando filas.
 
