@@ -14,8 +14,7 @@ typedef struct {
 } tarefa;
 
 tarefa minhas_tarefas[tamanho_maximo];
-int quantidade_tarefas= 0;
-
+int quantidade_tarefas= 0
 void adicionar_tarefa(){
     if(quantidade_tarefas >= tamanho_maximo) {
         printf("Lista cheia.\n");
@@ -24,15 +23,12 @@ void adicionar_tarefa(){
 
     printf("Digite o título da sua tarefa: \n");
     fgets(minhas_tarefas[quantidade_tarefas].titulo, tamanho_titulo, stdin);
-    minhas_tarefas[quantidade_tarefas].titulo[strcspn(minhas_tarefas[quantidade_tarefas].titulo, "\n")] = 0;
 
     printf("Digite a descrição da sua tarefa: \n");
     fgets(minhas_tarefas[quantidade_tarefas].descricao, tamanho_descricao, stdin);
-    minhas_tarefas[quantidade_tarefas].descricao[strcspn(minhas_tarefas[quantidade_tarefas].descricao, "\n")] = 0;
 
     printf("Digite a prioridade: \n");
     fgets(minhas_tarefas[quantidade_tarefas].prioridade, tamanho_prioridade, stdin);
-    minhas_tarefas[quantidade_tarefas].prioridade[strcspn(minhas_tarefas[quantidade_tarefas].prioridade, "\n")] = 0;
 
     quantidade_tarefas++;
     printf("Tarefa adicionada!\n");
