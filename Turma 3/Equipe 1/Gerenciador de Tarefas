@@ -1,11 +1,100 @@
 #include <stdio.h>
-void adicionarTarefa();
-void removerTarefa();
-void listarTarefas();
-void inicializarLista();
+#include <string.h>
+#define TAM 5
+
+typedef struct {
+    char titulo[50];
+    char descricao[200];
+    char prioridade[10];
+} Tarefa;
+
+Tarefa tarefas[TAM];
+int proximo[TAM];
+int inicio = -1;
+int livre = 0;
+
+void inicializar() {
+    for (int i = 0; i < TAM - 1; i++) {
+        proximo[i] = i + 1;
+    }
+    proximo[TAM - 1] = -1;
+    inicio = -1;
+    livre = 0;
+}
+void adicionarTarefa() {
+    if (livre == -1) {
+        printf("Lista cheia!\n");
+        return;
+    }
+
+    int novo = livre;
+    livre = proximo[livre];
+
+    printf("\nTítulo: ");
+    fgets(tarefas[novo].titulo, sizeof(tarefas[novo].titulo), stdin);
+    strtok(tarefas[novo].titulo, "\n");
+
+    printf("Descrição: ");
+    fgets(tarefas[novo].descricao, sizeof(tarefas[novo].descricao), stdin);
+    strtok(tarefas[novo].descricao, "\n");
+
+    printf("Prioridade (baixa, média, alta): ");
+    fgets(tarefas[novo].prioridade, sizeof(tarefas[novo].prioridade), stdin);
+    strtok(tarefas[novo].prioridade, "\n");
+
+    proximo[novo] = inicio;
+    inicio = novo;
+
+    printf("Tarefa adicionada com sucesso!\n");
+}
+
+void removerTarefa() {
+    if (inicio == -1) {
+        printf("A lista está vazia. Nada para remover.\n");
+        return;
+    }
+    int atual = inicio;
+    int anterior = -1;
+
+    while (proximo[atual] != -1) {
+        anterior = atual;
+        atual = proximo[atual];
+    }
+
+    if (anterior == -1) {
+        inicio = -1;
+    } else {
+        proximo[anterior] = -1;
+    }
+
+    proximo[atual] = livre;
+    livre = atual;
+
+    printf("Última tarefa removida com sucesso.\n");
+}
+
+void listarTarefas() {
+    if (inicio == -1) {
+        printf("\nNenhuma tarefa cadastrada.\n");
+        return;
+    }
+
+    printf("\nLista de Tarefas:\n");
+
+    int atual = inicio;
+    while (atual != -1) {
+        printf("Título: %s\n", tarefas[atual].titulo);
+        printf("Descrição: %s\n", tarefas[atual].descricao);
+        printf("Prioridade: %s\n", tarefas[atual].prioridade);
+        printf("\n");
+        atual = proximo[atual];
+    }
+}
+
 int main() {
     int opcao;
-    inicializarLista();
+    inicializar();
+
     do {
         printf("\nMenu de Tarefas\n");
         printf("1. Adicionar Tarefa\n");
@@ -14,6 +103,8 @@ int main() {
         printf("0. Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
+        getchar();
+
         if (opcao == 1) {
             adicionarTarefa();
         }
@@ -29,23 +120,8 @@ int main() {
         else {
             printf("Opção inválida. Tente novamente.\n");
         }
+
     } while(opcao != 0);
+
     return 0;
-}
-void listarTarefas() {
-    if (inicio == -1) {
-        printf("\nNenhuma tarefa cadastrada.\n");
-        return;
-    }
-
-    printf("\n Lista de Tarefas \n");
-
-    int atual = inicio;
-    while (atual != -1) {
-        printf("Título: %s\n", tarefas[atual].titulo);
-        printf("Descrição: %s\n", tarefas[atual].descricao);
-        printf("Prioridade: %s\n", tarefas[atual].prioridade);
-        printf("\n");
-        atual = proximo[atual];
-    }
 }
