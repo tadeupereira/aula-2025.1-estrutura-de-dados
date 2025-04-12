@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,7 +15,8 @@ typedef struct {
 } tarefa;
 
 tarefa minhas_tarefas[tamanho_maximo];
-int quantidade_tarefas= 0
+int quantidade_tarefas= 0;
+
 void adicionar_tarefa(){
     if(quantidade_tarefas >= tamanho_maximo) {
         printf("Lista cheia.\n");
