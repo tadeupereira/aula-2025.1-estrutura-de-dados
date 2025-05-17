@@ -200,7 +200,7 @@ Cada livro terá título, autor, código ISBN, e quantidade disponível. Para ca
     • Solicitar empréstimo (entra na fila se não disponível).
     • Liberar empréstimo (remove da fila).
     • Buscar livro por título.
-    • Ordenar livros por nome ou autor.✅ Implementação da estrutura de dados fila estática.
+    • Ordenar livros por nome ou autor.
 
 ---
 
