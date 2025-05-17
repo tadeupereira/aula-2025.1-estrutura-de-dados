@@ -83,7 +83,7 @@ Desenvolver um sistema para gerenciar tarefas utilizando listas ligadas. O usuá
 
 ---
 
-### 6.2. Gerenciador de atendimento
+### 6.2. Gerenciador de Atendimento
 #### 6.2.1. Objetivo
 Criar um sistema de gerenciamento de atendimento usando filas.
 
@@ -169,6 +169,96 @@ Desenvolver um sistema para armazenar e gerenciar as chamadas telefônicas feita
 
 A distribuição dos discentes nas equipes e a seleção do projeto a ser desenvolvido por cada equipe serão realizadas por sorteio durante o horário de aula.
 
+---
+
+### 6.5. Projetos dos discentes sem equipes e que devem ser apresentados individualmente
+As entregas destes projetos seguem mesmas regras dos itens “Entregas do projeto” e “Notas da disciplina”.
+
+---
+
+### 6.5.1. Sistema de Controle de Biblioteca Acadêmica
+#### 6.5.1.1. Objetivo
+Criar um sistema para gerenciar os livros e os empréstimos de uma biblioteca universitária.
+
+#### 6.5.1.2. Estruturas do domínio
+    • Lista de livros cadastrados (estrutura 1)
+    • Fila de empréstimos por livro (estrutura 2)
+
+#### 6.5.1.3. Descrição
+Cada livro terá título, autor, código ISBN, e quantidade disponível. Para cada livro, pode haver uma fila de espera para empréstimo caso não haja unidades disponíveis. Os empréstimos respeitam a ordem de solicitação e deve ser informado o nome e CPF do usuário que está na fila de empréstimos.
+
+#### 6.5.1.4. MVP (Entrega única)
+✅ Implementar estrutura de lista dinâmica para os livro.
+
+✅ Implementar estrutura de fila dinâmica para fila de espera por livro.
+
+✅ Funções para:
+
+    • Cadastrar livro.
+    • Remover livro.
+    • Listar todos os livros.
+    • Solicitar empréstimo (entra na fila se não disponível).
+    • Liberar empréstimo (remove da fila).
+    • Buscar livro por título.
+    • Ordenar livros por nome ou autor.✅ Implementação da estrutura de dados fila estática.
+
+---
+
+### 6.5.2. Sistema de Planejamento de Viagens em Grupo
+#### 6.5.2.1. Objetivo
+Criar um sistema para organizar viagens e gerenciar os participantes interessados em cada viagem.
+
+#### 6.5.2.2. Estruturas do domínio
+    • Lista de viagens cadastradas (estrutura 1)
+    • Fila de espera de participantes por viagem (estrutura 2)
+
+#### 6.5.2.3. Descrição
+Cada viagem terá um destino, uma data e um número máximo de participantes. Caso o número de interessados exceda o limite, os novos participantes entram em uma fila de espera. Para cada viagem, deve ser possível visualizar os participantes e gerenciar a fila de espera. Cada participante terá nome e CPF.
+
+#### 6.5.2.4. MVP (Entrega única)
+✅ Implementar estrutura de lista dinâmica para as viagens.
+
+✅ Implementar estrutura de fila dinâmica para fila de espera de participantes por viagem.
+
+✅ Funções para:
+
+    • Cadastrar nova viagem.
+    • Remover viagem.
+    • Listar todas as viagens.
+    • Inscrever participante na viagem (entra na fila se o limite for atingido).
+    • Confirmar saída de um participante (libera vaga para o próximo da fila).
+    • Buscar viagem por destino.
+    • Ordenar viagens por data ou destino.
+
+---
+
+### 6.5.3. Sistema de Cursos Online com Trilhas de Aprendizagem
+#### 6.5.3.1. Objetivo
+Criar um sistema para gerenciar cursos online e organizar alunos interessados em se inscrever.
+
+#### 6.5.3.2. Estruturas do domínio
+    • Lista de cursos disponíveis (estrutura 1)
+    • Fila de espera de alunos por curso (estrutura 2)
+
+#### 6.5.3.3. Descrição
+Cada curso terá título, área (ex: Programação, Design, etc.) e número máximo de vagas. Quando um curso atinge seu limite, novos alunos são colocados em uma fila de espera. Cada aluno é identificado por nome e e-mail. O sistema deve permitir o gerenciamento dos cursos e dos alunos em fila.
+
+#### 6.5.3.4. MVP (Entrega única)
+✅ Implementar estrutura de lista dinâmica para os cursos.
+
+✅ Implementar estrutura de fila dinâmica para fila de espera de alunos por curso.
+
+✅ Funções para:
+
+    • Cadastrar novo curso.
+    • Remover curso.
+    • Listar todos os cursos.
+    • Inscrever aluno no curso (entra na fila se não houver vagas).
+    • Liberar vaga no curso (aluno da fila é chamado).
+    • Buscar curso por título.
+    • Ordenar cursos por título ou área.
+
+---
 
 ## 7. Dúvidas
 Em caso de qualquer dúvida sobre este, o discente deve se encaminhar ao professor para que o mesmo e somente o mesmo possa dirimir tal dúvida.
