@@ -172,7 +172,7 @@ A distribuição dos discentes nas equipes e a seleção do projeto a ser desenv
 ---
 
 ### 6.5. Projetos dos discentes sem equipes e que devem ser apresentados individualmente
-As entregas destes projetos seguem mesmas regras dos itens “Entregas do projeto” e “Notas da disciplina”.
+As entregas destes projetos seguem as mesmas regras dos itens “Entregas do projeto” e “Notas da disciplina”.
 
 ---
 
