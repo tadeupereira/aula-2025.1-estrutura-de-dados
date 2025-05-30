@@ -58,7 +58,9 @@ void removerProduto(Fila* fila) {
         return;
     }
 
-    printf("Produto removido: %s - %s\n", fila->produtos[fila->frente].codigo, fila->produtos[fila->frente].descricao);
+    printf("Produto removido: %s - %s\n", 
+        fila->produtos[fila->frente].codigo, 
+        fila->produtos[fila->frente].descricao);
     fila->frente++;
 
     if (fila->frente > fila->tras) {
@@ -78,4 +80,36 @@ void listarProdutos(Fila* fila) {
         printf("Descricao: %s\n", fila->produtos[i].descricao);
         printf("Quantidade: %d\n\n", fila->produtos[i].quantidade);
     }
+    int main() {
+        Fila estoque;
+        inicializarFila(&estoque);
+    
+        int opcao;
+        do {
+            printf("\nGerenciador de Estoque\n");
+            printf("1. Adicionar Produto\n");
+            printf("2. Remover Produto\n");
+            printf("3. Listar Produtos\n");
+            printf("4. Sair\n");
+            printf("Escolha uma opcao: ");
+            scanf("%d", &opcao);
+    
+            switch (opcao) {
+                case 1:
+                    adicionarProduto(&estoque);
+                    break;
+                case 2:
+                    removerProduto(&estoque);
+                    break;
+                case 3:
+                    listarProdutos(&estoque);
+                    break;
+                case 4:
+                    printf("Saindo...\n");
+                    break;
+                default:
+                    printf("Opcao invalida. Tente novamente.\n");
+            }
+        } while (opcao != 4);
+    
 }
