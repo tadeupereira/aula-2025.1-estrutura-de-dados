@@ -6,8 +6,8 @@
 #define R     "\x1b[31m"
 #define Y  "\x1b[33m"
 #define G   "\x1b[32m"
-#define RESET   "\x1b[0m"
-#define MAX   15
+    #define RESET   "\x1b[0m"
+    #define MAX   15
 
 typedef struct {
     char titulo[50];
