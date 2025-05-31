@@ -1,28 +1,38 @@
-# 6. Projeto e equipe
-## 6.4. Gerenciador de Chamadas Telefônicas
-### 6.4.1. Objetivo
-Criar um sistema de gerenciamento de ligações telefônicas utilizando filas.
+# CallFlow
+Gerenciador de Chamadas Telefônicas.
 
-### 6.4.2. Descrição
-Desenvolver um sistema para armazenar e gerenciar as chamadas telefônicas feitas e recebidas utilizando filas. O usuário poderá adicionar, remover e visualizar chamadas telefônicas. Cada registro de chamada terá o número discado, o dia da chamada e o horário da chamada.
+Oque é preciso : WsL, biblioteca ncurses
 
-### 6.4.3. Entrega 1 - MVP (Minimum Viable Product)
-✅ Implementação da estrutura de dados fila estática.
+Wsl : wsl --install 
 
-✅ Implementar funções para:
+ncurses: sudo apt install libncurses-dev
 
-    • Adicionar uma chamada na fila.
-    • Remover uma chamada da fila.
-    • Listar todas as chamadas armazenadas da fila.
+Primeiro instale Wsl no terminal, normalmente, logo após...
 
-### 6.4.4. Entrega 2 - MVP (Minimum Viable Product)
-✅ Implementar estrutura de dados fila dinâmica.
+Sicronize com o seu editor de codigo, Se for pelo vscode, o mesmo era lhe apresentar
+uma extensão, chamada wsl da propria microsoft. No cmd de ubuntu, coloque.
 
-✅ Implementar funções para:
+ncurses: sudo apt install libncurses-dev
 
-    • Remover chamadas do histórico da fila.
-    • Ordenar chamadas pelos números.
-    • Fazer busca linear de uma chamada pelo número.
-    • Fazer busca binária de uma chamada pelo número.
+Agora, vincule com Vscode do ubuntu.
 
----
+1. Instale a Extensão "WSL" no VS Code:
+
+Abra o VS Code.
+Vá para a aba "Extensions" (Ctrl+Shift+X).
+Pesquise por "WSL".
+Instale a extensão "WSL" da Microsoft.
+
+2. Abra uma Pasta do WSL no VS Code:
+
+Existem algumas maneiras de fazer isso:
+A partir do terminal WSL:
+Abra o terminal WSL.
+Navegue até a pasta que você deseja abrir no VS Code.
+Digite code . (o ponto é importante) e pressione Enter. Isso abrirá o VS Code diretamente na pasta do WSL.
+A partir do VS Code:
+Abra o VS Code.
+Clique no ícone "Remote Explorer" (no canto inferior esquerdo, um ícone com um sinal de "><" ).
+Você verá suas distribuições WSL listadas.
+Clique no ícone de pasta ao lado da distribuição que você deseja usar.
+Navegue até a pasta desejada e clique em "OK".
