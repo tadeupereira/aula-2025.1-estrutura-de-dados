@@ -22,4 +22,4 @@ void telaRemover(Lista* lista);
 void telaBuscaLinear(Lista* lista);
 void telaBuscaBinaria(Lista* lista);
 
-#endif // UI_INCLUDED
+#endif

@@ -35,4 +35,4 @@ Tarefa* buscaLinear(Lista* lista, char titulo[50]);
 Tarefa** criarArray(Lista* lista);
 Tarefa* buscaBinaria(Tarefa** array, int tamanho, char titulo[50]);
 
-#endif // PILHA_INCLUDED
+#endif
