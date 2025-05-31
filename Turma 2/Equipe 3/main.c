@@ -1,145 +1,275 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-
-#define max_produtos_na_lista 10
 
 typedef struct Produto {
     char codigo[9];
     char descricao[100];
     int quantidade;
+    struct Produto* proximo;
 } Produto;
 
-Produto produtos[max_produtos_na_lista];  
-char lista[max_produtos_na_lista][9];  
-int total_cadastros = 0;  
+typedef struct {
+    Produto* inicio;
+} ListaProdutos;
 
-void CadastrarProduto() {
-    if (total_cadastros >= max_produtos_na_lista) {
-        printf("Você não pode cadastrar mais itens, pois a quantidade de cadastros chegou ao limite!\n");
-    } else {
-        Produto produto;
-        printf("\nIniciando o cadastro do produto\n");
-
-        while (1) {
-            printf("Insira o código do produto (máximo 8 dígitos):\n");
-            scanf("%s", produto.codigo);
-
-            if (strlen(produto.codigo) > 8) {
-                printf("O código do produto deve ter no máximo 8 dígitos!\n");
-                continue;
-            }
-
-            int i;
-            for (i = 0; i < total_cadastros; i++) {
-                if (strcmp(produto.codigo, produtos[i].codigo) == 0) {
-                    printf("Já existe um prouto com esse código! Digite outro.\n");
-                    break;
-                }
-            }
-
-            if (i == total_cadastros) {
-                break;
-            }
-        }
-
-        printf("Insira a descrição do produto:\n");
-        scanf(" %[^\n]", produto.descricao); 
-
-        printf("Insira a quantidade de produtos no estoque:\n");
-        while (scanf("%d", &produto.quantidade) != 1 || produto.quantidade < 0) {
-            printf("Quantidade inválida! Por favor, digite apenas números inteiros positivos:\n");
-
-            while (getchar() != '\n');
-        }
-
-        produtos[total_cadastros] = produto;
-
-        for (int i = 0; i < 9; i++) {
-            lista[total_cadastros][i] = produto.codigo[i];
-        }
-
-        total_cadastros++;
-
-        printf("Produto cadastrado com sucesso!\n");
-        printf("Código: %s\n", produto.codigo);
-        printf("Descrição: %s\n", produto.descricao);
-        printf("Quantidade: %d\n", produto.quantidade);
+ListaProdutos* CriarLista() {
+    ListaProdutos* lista = (ListaProdutos*) malloc(sizeof(ListaProdutos));
+    if (!lista) {
+        printf("Erro ao alocar memória para a lista!\n");
+        exit(1);
     }
+    lista->inicio = NULL;
+    return lista;
 }
 
-
-void RemoverProduto(char codigo[]) {
-    int index = -1;
-
-    for (int i = 0; i < total_cadastros; i++) {
-        if (strcmp(codigo, lista[i]) == 0) {
-            index = i;
-            break;
-        }
+void LiberarLista(ListaProdutos* lista) {
+    Produto* atual = lista->inicio;
+    while (atual != NULL) {
+        Produto* produtoParaLiberar = atual;
+        atual = atual->proximo;
+        free(produtoParaLiberar);
     }
+    free(lista);
+}
 
-    if (index == -1) {
-        printf("Produto com código %s não encontrado!\n", codigo);
+void CadastrarProduto(ListaProdutos* lista, Produto item) {
+    Produto* novo = (Produto*) malloc(sizeof(Produto));
+    if (!novo) {
+        printf("Erro de alocação de memória!\n");
         return;
     }
-
-    for (int i = index; i < total_cadastros - 1; i++) {
-        produtos[i] = produtos[i + 1];
-        strcpy(lista[i], lista[i + 1]);
-    }
-
-    total_cadastros--;
-
-    printf("Produto com código %s removido com sucesso!\n", codigo);
+    strcpy(novo->codigo, item.codigo);
+    strcpy(novo->descricao, item.descricao);
+    novo->quantidade = item.quantidade;
+    novo->proximo = lista->inicio;
+    lista->inicio = novo;
+    printf("Produto cadastrado com sucesso!\n");
 }
 
-void ExibirProdutos() {
-    if (total_cadastros == 0) {
-        printf("\nNenhum produto cadastrado.\n");
+Produto RemoverProduto(ListaProdutos* lista, char codigo[]) {
+    Produto removido;
+    removido.codigo[0] = '\0';
+    Produto* atual = lista->inicio;
+    Produto* produtoAnterior = NULL;
+
+    while (atual != NULL && strcmp(atual->codigo, codigo) != 0) {
+        produtoAnterior = atual;
+        atual = atual->proximo;
+    }
+
+    if (atual == NULL) {
+        printf("Produto com código %s não encontrado!\n", codigo);
+        return removido;
+    }
+
+    strcpy(removido.codigo, atual->codigo);
+    strcpy(removido.descricao, atual->descricao);
+    removido.quantidade = atual->quantidade;
+
+    if (produtoAnterior == NULL) {
+        lista->inicio = atual->proximo;
     } else {
-        for (int i = 0; i < total_cadastros; i++) {
-            printf("\nProduto %d:\n", i + 1);
-            printf("Código: %s\n", produtos[i].codigo);
-            printf("Descrição: %s\n", produtos[i].descricao);
-            printf("Quantidade: %d\n", produtos[i].quantidade);
+        produtoAnterior->proximo = atual->proximo;
+    }
+    free(atual);
+    printf("Produto com código %s removido com sucesso!\n", removido.codigo);
+    return removido;
+}
+
+void ExibirProdutos(ListaProdutos* lista) {
+    if (lista->inicio == NULL) {
+        printf("Nenhum produto cadastrado.\n");
+        return;
+    }
+    Produto* atual = lista->inicio;
+    while (atual != NULL) {
+        printf("\n"); 
+        printf("Código: %s\n", atual->codigo);
+        printf("Descrição: %s\n", atual->descricao);
+        printf("Quantidade: %d\n", atual->quantidade);
+        printf("\n"); 
+        atual = atual->proximo;
+    }
+}
+
+void OrdenarProdutos(ListaProdutos* lista) {
+    if (!lista->inicio || !lista->inicio->proximo) return;
+    int trocou;
+    Produto *atual, *limite = NULL;
+
+    do {
+        trocou = 0;
+        atual = lista->inicio;
+        while (atual->proximo != limite) {
+            if (strcmp(atual->descricao, atual->proximo->descricao) > 0) {
+                Produto temp = *atual;
+                strcpy(atual->codigo, atual->proximo->codigo);
+                strcpy(atual->descricao, atual->proximo->descricao);
+                atual->quantidade = atual->proximo->quantidade;
+                strcpy(atual->proximo->codigo, temp.codigo);
+                strcpy(atual->proximo->descricao, temp.descricao);
+                atual->proximo->quantidade = temp.quantidade;
+                trocou = 1;
+            }
+            atual = atual->proximo;
+        }
+        limite = atual;
+    } while (trocou);
+    printf("Produtos ordenados por descrição com sucesso!\n");
+}
+
+Produto* BuscaLinear(ListaProdutos* lista, char descricao[]) {
+    Produto* atual = lista->inicio;
+    while (atual != NULL) {
+        if (strcmp(atual->descricao, descricao) == 0) {
+            return atual;
+        }
+        atual = atual->proximo;
+    }
+    return NULL;
+}
+
+int ListaParaVetor(ListaProdutos* lista, Produto** vetor) {
+    int quantidadeProdutos = 0;
+    Produto* atual = lista->inicio;
+    while (atual != NULL) {
+        quantidadeProdutos++;
+        atual = atual->proximo;
+    }
+    *vetor = (Produto*) malloc(quantidadeProdutos * sizeof(Produto));
+    atual = lista->inicio;
+    for (int i = 0; i < quantidadeProdutos; i++) {
+        (*vetor)[i] = *atual;
+        atual = atual->proximo;
+    }
+    return quantidadeProdutos;
+}
+
+Produto BuscaBinaria(ListaProdutos* lista, char descricao[]) {
+    Produto resultado;
+    resultado.codigo[0] = '\0';  
+    Produto* vetorProdutos;
+    int tamanho = ListaParaVetor(lista, &vetorProdutos);
+
+    for (int i = 0; i < tamanho - 1; i++) {
+        for (int j = i + 1; j < tamanho; j++) {
+            if (strcmp(vetorProdutos[i].descricao, vetorProdutos[j].descricao) > 0) {
+                Produto temp = vetorProdutos[i];
+                vetorProdutos[i] = vetorProdutos[j];
+                vetorProdutos[j] = temp;
+            }
         }
     }
+
+    int esq = 0, dir = tamanho - 1;
+    while (esq <= dir) {
+        int meio = (esq + dir) / 2;
+        int comparacao = strcmp(vetorProdutos[meio].descricao, descricao);
+        if (comparacao == 0) {
+            resultado = vetorProdutos[meio];
+            break;
+        } else if (comparacao < 0) {
+            esq = meio + 1;
+        } else {
+            dir = meio - 1;
+        }
+    }
+    free(vetorProdutos);
+    return resultado;
 }
 
 int main() {
+    ListaProdutos* listaProdutos = CriarLista();
     int opcao;
     do {
         printf("\nSistema de Gerenciamento de Estoque\n");
         printf("1. Adicionar Produto\n");
         printf("2. Remover Produto\n");
         printf("3. Exibir Produtos\n");
-        printf("4. Sair\n");
+        printf("4. Ordenar Produtos por Descrição\n");
+        printf("5. Busca Linear por Descrição\n");
+        printf("6. Busca Binária por Descrição\n");
+        printf("7. Sair\n");
         printf("Por gentileza, escolha a opção que você deseja realizar: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
-            case 1:
-                CadastrarProduto();
-                break;
-            case 2:
-                {
-                    char codigo[9];
-                    printf("Insira o código do produto que deseja remover: ");
-                    scanf("%8s", codigo);
-                    RemoverProduto(codigo);
+            case 1: {
+                Produto novo;
+                printf("\nIniciando o cadastro do produto\n");
+                while (1) {
+                    printf("Insira o código do produto (máximo 8 dígitos): ");
+                    scanf("%s", novo.codigo);
+                    if (strlen(novo.codigo) > 8) {
+                        printf("O código do produto deve ter no máximo 8 dígitos!\n");
+                        continue;
+                    }
+                    break;
                 }
+                printf("Insira a descrição do produto: ");
+                scanf(" %[^\n]", novo.descricao);
+                
+                while (1) {
+                    printf("Insira a quantidade do produto: ");
+                    if (scanf("%d", &novo.quantidade) != 1) {
+                        printf("Quantidade inválida! Por favor, digite apenas números inteiros positivos:\n");
+                        while (getchar() != '\n'); 
+                        continue;
+                    }
+                    if (novo.quantidade < 0) {
+                        printf("A quantidade não pode ser negativa! Digite apenas números inteiros positivos:\n");
+                        continue;
+                    }
+                    break;
+                }
+                CadastrarProduto(listaProdutos, novo);
                 break;
+            }
+            case 2: {
+                char codigo[9];
+                printf("Insira o código do produto que deseja remover: ");
+                scanf("%s", codigo);
+                RemoverProduto(listaProdutos, codigo);
+                break;
+            }
             case 3:
-                ExibirProdutos();
+                ExibirProdutos(listaProdutos);
                 break;
             case 4:
+                OrdenarProdutos(listaProdutos);
+                break;
+            case 5: {
+                char descricao[100];
+                printf("Digite a descrição do produto: ");
+                scanf(" %[^\n]", descricao);
+                Produto* produto = BuscaLinear(listaProdutos, descricao);
+                if (produto) {
+                    printf("Produto encontrado: %s - %s - %d\n", produto->codigo, produto->descricao, produto->quantidade);
+                } else {
+                    printf("Produto não encontrado.\n");
+                }
+                break;
+            }
+            case 6: {
+                char descricao[100];
+                printf("Digite a descrição do produto: ");
+                scanf(" %[^\n]", descricao);
+                Produto produto = BuscaBinaria(listaProdutos, descricao);
+                if (produto.codigo[0] != '\0') {
+                    printf("Produto encontrado: %s - %s - %d\n", produto.codigo, produto.descricao, produto.quantidade);
+                } else {
+                    printf("Produto não encontrado.\n");
+                }
+                break;
+            }
+            case 7:
                 printf("Saindo do sistema...\n");
                 break;
             default:
-                printf("Opção inválida! Tente novamente.\n");
-                break;
+                printf("Opção inválida. Tente novamente.\n");
         }
-    } while (opcao != 4);
-
+    } while (opcao != 7);
+    LiberarLista(listaProdutos);
     return 0;
 }
