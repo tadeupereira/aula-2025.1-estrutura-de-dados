@@ -5,41 +5,35 @@
 #define MAX_NOME 100
 #define MAX_CPF 15
 
-// Estrutura para representar a prioridade
 typedef enum {
     BAIXA = 1,
     MEDIA = 2,
     ALTA = 3
 } Prioridade;
 
-// Estrutura para representar um cliente
 typedef struct {
     char nome[MAX_NOME];
     char cpf[MAX_CPF];
     Prioridade prioridade;
 } Cliente;
 
-// Estrutura do nó da fila
 typedef struct No {
     Cliente cliente;
     struct No* proximo;
 } No;
 
-// Estrutura da fila
 typedef struct {
     No* inicio;
     No* fim;
     int tamanho;
 } Fila;
 
-// Função para inicializar a fila
 void inicializarFila(Fila* fila) {
     fila->inicio = NULL;
     fila->fim = NULL;
     fila->tamanho = 0;
 }
 
-// Função para criar um novo nó
 No* criarNo(Cliente cliente) {
     No* novo = (No*)malloc(sizeof(No));
     if (novo == NULL) {
@@ -51,7 +45,6 @@ No* criarNo(Cliente cliente) {
     return novo;
 }
 
-// Função para adicionar cliente na fila
 void adicionarCliente(Fila* fila) {
     Cliente novoCliente;
     int prioridade;
@@ -59,15 +52,15 @@ void adicionarCliente(Fila* fila) {
     printf("\n=== ADICIONAR CLIENTE ===\n");
     printf("Nome: ");
     fgets(novoCliente.nome, MAX_NOME, stdin);
-    novoCliente.nome[strcspn(novoCliente.nome, "\n")] = 0; // Remove \n
+    novoCliente.nome[strcspn(novoCliente.nome, "\n")] = 0;
     
     printf("CPF: ");
     fgets(novoCliente.cpf, MAX_CPF, stdin);
-    novoCliente.cpf[strcspn(novoCliente.cpf, "\n")] = 0; // Remove \n
+    novoCliente.cpf[strcspn(novoCliente.cpf, "\n")] = 0;
     
     printf("Prioridade (1-Baixa, 2-Média, 3-Alta): ");
     scanf("%d", &prioridade);
-    getchar(); // Limpa buffer
+    getchar();
     
     if (prioridade < 1 || prioridade > 3) {
         printf("Prioridade inválida! Definindo como BAIXA.\n");
@@ -91,7 +84,7 @@ void adicionarCliente(Fila* fila) {
     printf("Cliente adicionado com sucesso!\n");
 }
 
-// Função para remover cliente do início da fila
+
 void removerCliente(Fila* fila) {
     if (fila->inicio == NULL) {
         printf("Fila vazia! Nenhum cliente para remover.\n");
@@ -113,7 +106,6 @@ void removerCliente(Fila* fila) {
     printf("Cliente removido da fila!\n");
 }
 
-// Função para listar todos os clientes
 void listarClientes(Fila* fila) {
     if (fila->inicio == NULL) {
         printf("\nFila vazia!\n");
@@ -143,7 +135,6 @@ void listarClientes(Fila* fila) {
     }
 }
 
-// Função para remover cliente específico por nome
 void removerClientePorNome(Fila* fila) {
     if (fila->inicio == NULL) {
         printf("Fila vazia!\n");
@@ -162,7 +153,6 @@ void removerClientePorNome(Fila* fila) {
     while (atual != NULL) {
         if (strcmp(atual->cliente.nome, nome) == 0) {
             if (anterior == NULL) {
-                // Remover primeiro elemento
                 fila->inicio = atual->proximo;
                 if (fila->inicio == NULL) {
                     fila->fim = NULL;
@@ -187,14 +177,12 @@ void removerClientePorNome(Fila* fila) {
     printf("Cliente não encontrado!\n");
 }
 
-// Função auxiliar para trocar dois clientes
 void trocarClientes(Cliente* a, Cliente* b) {
     Cliente temp = *a;
     *a = *b;
     *b = temp;
 }
 
-// Função para ordenar clientes por prioridade (Bubble Sort)
 void ordenarPorPrioridade(Fila* fila) {
     if (fila->tamanho <= 1) {
         printf("Fila com poucos elementos para ordenar.\n");
@@ -212,7 +200,6 @@ void ordenarPorPrioridade(Fila* fila) {
         while (atual != NULL && atual->proximo != NULL) {
             proximo = atual->proximo;
             
-            // Ordena por prioridade (ALTA primeiro)
             if (atual->cliente.prioridade < proximo->cliente.prioridade) {
                 trocarClientes(&atual->cliente, &proximo->cliente);
                 trocou = 1;
@@ -225,7 +212,6 @@ void ordenarPorPrioridade(Fila* fila) {
     printf("Fila ordenada por prioridade (Alta -> Média -> Baixa)!\n");
 }
 
-// Função para busca linear por nome
 void buscaLinear(Fila* fila) {
     if (fila->inicio == NULL) {
         printf("Fila vazia!\n");
@@ -262,7 +248,6 @@ void buscaLinear(Fila* fila) {
     printf("Cliente não encontrado!\n");
 }
 
-// Função auxiliar para converter fila em array (para busca binária)
 Cliente* filaParaArray(Fila* fila) {
     if (fila->tamanho == 0) return NULL;
     
@@ -281,7 +266,6 @@ Cliente* filaParaArray(Fila* fila) {
         i++;
     }
     
-    // Ordenar array por nome para busca binária
     for (i = 0; i < fila->tamanho - 1; i++) {
         for (int j = 0; j < fila->tamanho - i - 1; j++) {
             if (strcmp(array[j].nome, array[j + 1].nome) > 0) {
@@ -293,7 +277,6 @@ Cliente* filaParaArray(Fila* fila) {
     return array;
 }
 
-// Função para busca binária por nome
 void buscaBinaria(Fila* fila) {
     if (fila->inicio == NULL) {
         printf("Fila vazia!\n");
@@ -345,7 +328,6 @@ void buscaBinaria(Fila* fila) {
     free(array);
 }
 
-// Função para liberar memória da fila
 void liberarFila(Fila* fila) {
     No* atual = fila->inicio;
     while (atual != NULL) {
@@ -358,7 +340,6 @@ void liberarFila(Fila* fila) {
     fila->tamanho = 0;
 }
 
-// Função para exibir o menu
 void exibirMenu() {
     printf("\n=== SISTEMA DE GERENCIAMENTO DE ATENDIMENTO ===\n");
     printf("1. Adicionar cliente na fila\n");
@@ -381,7 +362,7 @@ int main() {
     do {
         exibirMenu();
         scanf("%d", &opcao);
-        getchar(); // Limpa buffer
+        getchar();
         
         switch (opcao) {
             case 1:
